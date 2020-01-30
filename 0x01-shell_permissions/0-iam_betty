@@ -1,2 +1,2 @@
 #!/bin/bash
-usermod betty
+chmod -R +X .
