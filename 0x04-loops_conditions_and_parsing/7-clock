@@ -9,7 +9,10 @@ do
     do
         echo "$j"
         ((j++))
+        if [ $j -eq 60 ]; then
+			j=1
+			break
+		fi
     done
     ((i++))
-    j=1
 done
