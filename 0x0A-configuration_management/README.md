@@ -14,3 +14,10 @@ Requirements:
 
 Install puppet-lint  
 Version must be 2.1.1  
+
+# 2 Using Puppet, create a manifest that kills a process named killmenow.
+
+Requirements:
+
+Must use the exec Puppet resource  
+Must use pkill  
