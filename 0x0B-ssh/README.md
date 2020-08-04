@@ -7,4 +7,7 @@ The created key must be protected by the passphrase betty
 # 2 - Share your SSH client configuration in your answer file.
 Requirements:
 Your SSH client configuration must be configured to use the private key ~/.ssh/holberton  
+Your SSH client configuration must be configured to refuse to authenticate using a password 
+# 4 - Requirements:
+Your SSH client configuration must be configured to use the private key ~/.ssh/holberton  
 Your SSH client configuration must be configured to refuse to authenticate using a password  
