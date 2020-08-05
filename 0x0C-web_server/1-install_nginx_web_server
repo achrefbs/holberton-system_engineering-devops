@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #install and test nginx on your web-01 server
-ssh ubuntu@34.75.103.17 -i ~/.ssh/holberton 'sudo apt-get -y install nginx'
-ssh ubuntu@34.75.103.17 -i ~/.ssh/holberton 'sudo chown -R $USER:$USER /var/www'
-ssh ubuntu@34.75.103.17 -i ~/.ssh/holberton 'sudo echo "Holberton School" > /var/www/html/index.nginx-debian.html'
+sudo apt-get -y install nginx
+sudo chown -R $USER:$USER /var/www
+sudo echo "Holberton School" > /var/www/html/index.nginx-debian.html
