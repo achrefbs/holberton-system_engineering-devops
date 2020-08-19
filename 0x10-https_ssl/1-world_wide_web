@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Bash script that will display information about subdomains.
+func(){
+
+    if [[ $# -eq 1 ]]; then
+    lis=(www lb-01 web-01 web-02)
+    for l in "${lis[@]}"; do
+        dg=$(dig $l.$1| grep -A1 'ANSWER SECTION:')
+        echo $dg | awk -v sb="$l" '{print "The subdomain "sb" is a "$7" record and points to "$8}'
+    done
+
+    else
+    dg=$(dig $2.$1| grep -A1 'ANSWER SECTION:')
+    echo $dg | awk -v sb="$2" '{print "The subdomain "sb" is a "$7" record and points to "$8}'
+    fi
+    return 0
+}
+func $1 $2
