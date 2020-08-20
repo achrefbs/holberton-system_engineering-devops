@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#Configure Nginx so that its HTTP response contains a custom header
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo touch /usr/share/nginx/html/notfound.html
+sudo echo "404 not found" | sudo tee /usr/share/nginx/html/notfound.html
+printf %s "server {
+	listen 80;
+	listen [::]:80 default_server;
+    add_header X-Served-By $HOSTNAME;
+	root   /usr/share/nginx/html;
+	index  index.html index.htm;
+	location /redirect_me {
+		return 301 http://google.com/;
+	}
+	error_page 404 /notfound.html;
+	location = /notfound {
+		root /usr/share/nginx/html;
+		internal;
+	}
+}" > /etc/nginx/sites-available/default
+sudo service nginx restart
