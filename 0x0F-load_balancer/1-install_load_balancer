@@ -8,7 +8,7 @@ sudo apt-get install haproxy=1.8.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
-printf %s "
+echo -e "
 frontend load_balancer
     bind *:80
     mode http
