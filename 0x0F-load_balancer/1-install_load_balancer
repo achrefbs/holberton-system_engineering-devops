@@ -8,13 +8,14 @@ sudo apt-get install haproxy=1.8.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
-printf %s "frontend load_balancer
-                bind *:80
-                mode http
-                default_backend webserver
-        backend webserver
-                balance roundrobin
-        server 1423-web-01 34.75.103.17:80 check
-        server 1423-web-02 34.75.105.30:80 check
+printf %s "
+frontend load_balancer
+    bind *:80
+    mode http
+    default_backend webserver
+backend webserver
+    balance roundrobin
+    server 1423-web-01 34.75.103.17:80 check
+    server 1423-web-02 34.75.105.30:80 check
 " >> /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+service haproxy start
