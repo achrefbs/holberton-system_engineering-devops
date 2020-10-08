@@ -15,5 +15,5 @@ server {
 	location /airbnb-onepage {
 		proxy_pass http://0.0.0.0:5000;
 	}
-	server_name achref.tech
+	server_name achref.tech;
 }
